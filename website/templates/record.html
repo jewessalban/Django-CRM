@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="card">
+    <div class="card-header"><strong>
+    	{{ character_record.name }} 
+		</strong>
+    </div>
+    <div class="card-body">
+
+
+
+<p class="card-text">
+<strong>Quality: </strong>{{ character_record.quality }}</p>
+
+<p class="card-text">
+<strong>Weapon: </strong>{{ character_record.weapon }}
+</p>
+
+<p class="card-text">
+<strong>Element: </strong>{{ character_record.element }}</p>
+
+<p class="card-text">
+<strong>Region: </strong>{{ character_record.region }}</p>
+
+    
+    
+  </div>
+</div>
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+<a href="{% url 'delete_record' character_record.id %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update_record' character_record.id %}" class="btn btn-secondary">Update Record</a>
+		
+
+{% endblock %}
